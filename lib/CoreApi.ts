@@ -3,9 +3,9 @@ import HttpClient from "./HttpClient.ts";
 import Transaction from "./Transaction.ts";
 
 class CoreApi {
-  apiConfig: ApiConfig;
-  httpClient: HttpClient;
-  transaction: Transaction;
+  apiConfig: any;
+  httpClient: any;
+  transaction: any;
 
   constructor(options = { isProduction: false, serverKey: "", clientKey: "" }) {
     this.apiConfig = new ApiConfig(options);
@@ -19,7 +19,7 @@ class CoreApi {
    * @return {Promise} - Promise contains Object from JSON decoded response
    */
   charge(parameter = {}) {
-    let apiUrl = this.apiConfig.getCoreApiBaseUrl() + "/charge";
+    let apiUrl = this.apiConfig.getCoreBaseURL() + "/charge";
     let responsePromise = this.httpClient.request(
       "POST",
       this.apiConfig.get().serverKey,
@@ -34,7 +34,7 @@ class CoreApi {
    * @return {Promise} - Promise contains Object from JSON decoded response
    */
   capture(parameter = {}) {
-    let apiUrl = this.apiConfig.getCoreApiBaseUrl() + "/capture";
+    let apiUrl = this.apiConfig.getCoreBaseURL() + "/capture";
     let responsePromise = this.httpClient.request(
       "POST",
       this.apiConfig.get().serverKey,
@@ -50,7 +50,7 @@ class CoreApi {
    * @return {Promise} - Promise contains Object from JSON decoded response
    */
   cardRegister(parameter = {}) {
-    let apiUrl = this.apiConfig.getCoreApiBaseUrl() + "/card/register";
+    let apiUrl = this.apiConfig.getCoreBaseURL() + "/card/register";
     let responsePromise = this.httpClient.request(
       "GET",
       this.apiConfig.get().serverKey,
@@ -66,7 +66,7 @@ class CoreApi {
    * @return {Promise} - Promise contains Object from JSON decoded response
    */
   cardToken(parameter = {}) {
-    let apiUrl = this.apiConfig.getCoreApiBaseUrl() + "/token";
+    let apiUrl = this.apiConfig.getCoreBaseURL() + "/token";
     let responsePromise = this.httpClient.request(
       "GET",
       this.apiConfig.get().serverKey,

@@ -1,8 +1,8 @@
 import Midtrans from "../../mod.ts";
 const core = new Midtrans.ApiCore({
-  isProduction: true,
-  serverKey: "Mid-server-xZ1wNViwmhhsyw1GE2jtOpwA",
-  clientKey: "Mid-client-pGgnVhaswOAG9wfQ",
+  isProduction: false,
+  serverKey: "Midtrans server key",
+  clientKey: "Midtrans client key",
 });
 
 class MidtransController {
