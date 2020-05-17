@@ -73,7 +73,7 @@ snap.createTransaction(parameter)
 
 ### Core API (VT-Direct)
 
-You can see some Core API examples [here](examples/coreApi).
+You can see some Core API examples [here](examples/controllers).
 
 Available methods for `CoreApi` class
 
